@@ -181,6 +181,24 @@ angular.module('confusionApp')
                 $scope.message = "Error: " + response.status + " " + response.statusText;
             }
         );
+
+
+        $(document).ready(function(){
+            $("#mycarousel").carousel( {interval: 2000});
+            $("#carousel-pause").click(function(){
+                $("#mycarousel").carousel('pause');
+            });
+            $("#carousel-play").click(function(){
+                $("#mycarousel").carousel('cycle');        
+            });
+        });
+    
+        $(document).ready(function() {
+           
+           $("#reserveTblBtn").click(function() {
+               $("#reserveModal").modal("toggle");
+           });            
+        });
 }])
 
 .controller('AboutController', ['$scope', 'corporateFactory', function ($scope, corporateFactory) {
